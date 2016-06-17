@@ -29,4 +29,3 @@ public struct P3ErrorSpecification<CodeType, DescriptionType, DomainType>: Error
         _domain = ec.domain
     }
 }
-
