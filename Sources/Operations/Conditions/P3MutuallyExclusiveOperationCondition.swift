@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-public struct MutuallyExclusive<T>: P3OperationCondition {
+public struct P3MutuallyExclusiveOperationCondition<T>: P3OperationCondition {
     public static var name: String {
         return "MutuallyExclusive<\(T.self)>"
     }
