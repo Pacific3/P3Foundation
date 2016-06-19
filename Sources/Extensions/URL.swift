@@ -6,8 +6,8 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-extension URL {
-    public func URLWithParams(params: [String:String])-> URL? {
-        return URL(string: "\(self)?\(params.p3_URLEncodedString())")
+public extension URL {
+    public func p3_append(params: [String:String])-> URL? {
+        return URL(string: "\(self.absoluteString ?? "")?\(params.p3_URLEncodedString())")
     }
 }

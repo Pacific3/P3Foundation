@@ -112,7 +112,7 @@ public class P3OperationQueue: OperationQueue {
                 )
             }
         } else {
-            operation.addCompletion { [weak self, weak operation] in
+            operation.add { [weak self, weak operation] in
                 guard let queue = self, let operation = operation else { return }
                 queue.delegate?.operationQueue?(operationQueue: queue, operationDidFinish: operation, withErrors: [])
             }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-extension Lock {
+public extension Lock {
     public func withCriticalScope<T>( block: @noescape(Void) -> T) -> T {
         lock()
         let value = block()
@@ -15,7 +15,7 @@ extension Lock {
     }
 }
 
-extension RecursiveLock {
+public extension RecursiveLock {
     public func withCriticalScope<T>( block: @noescape(Void) -> T) -> T {
         lock()
         let value = block()

@@ -7,14 +7,14 @@
 //
 
 extension Operation {
-    public func addCompletion(block: (Void) -> Void) {
+    public func add(completion: (Void) -> Void) {
         if let existing = completionBlock {
             completionBlock = {
                 existing()
-                block()
+                completion()
             }
         } else {
-            completionBlock = block
+            completionBlock = completion
         }
     }
     
