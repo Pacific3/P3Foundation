@@ -13,7 +13,7 @@ public protocol P3OperationCondition {
     static var name: String { get }
     static var isMutuallyExclusive: Bool { get }
     
-    func dependencyForOperation(operation: Operation) -> Operation?
+    func dependencyForOperation(operation: P3Operation) -> Operation?
     func evaluateForOperation(operation: Operation, completion: (P3OperationCompletionResult) -> Void)
 }
 

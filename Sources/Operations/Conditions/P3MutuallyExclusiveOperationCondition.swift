@@ -17,7 +17,7 @@ public struct P3MutuallyExclusiveOperationCondition<T>: P3OperationCondition {
     
     public init() { }
     
-    public func dependencyForOperation(operation: Operation) -> Operation? {
+    public func dependencyForOperation(operation: P3Operation) -> Operation? {
         return nil
     }
     
