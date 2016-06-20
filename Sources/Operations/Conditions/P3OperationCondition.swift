@@ -45,12 +45,12 @@ struct OperationConditionEvaluator {
     static func evaluate(conditions: [P3OperationCondition], operation: Operation, completion: ([NSError]) -> Void) {
         let conditionGroup = DispatchGroup()
         
-        var results = [P3OperationCompletionResult?]()
+        var results: [P3OperationCompletionResult?] = []
         
-        for (index, condition) in conditions.enumerated() {
+        for condition in conditions {
             conditionGroup.enter()
             condition.evaluateForOperation(operation: operation) { result in
-                results[index] = result
+                results.append(result)
                 conditionGroup.leave()
             }
         }
