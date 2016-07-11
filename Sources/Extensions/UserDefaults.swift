@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-private let userDefaults = UserDefaults.standard()
+private let userDefaults = UserDefaults.standard
 
 public extension UserDefaults {
     // MARK: - Get Values

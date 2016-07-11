@@ -19,7 +19,7 @@ public func p3_documentsDirectory() -> String? {
 
 public func p3_executeOnMainThread(handler: ((Void) -> Void)?) {
     if let block = handler {
-        if Thread.isMainThread() {
+        if Thread.isMainThread {
             block()
         } else {
             DispatchQueue.main.sync(execute: block)
@@ -33,7 +33,7 @@ public func flatten<A>(x: A??) -> A? {
 }
 
 public func p3_executeOnMainThread<A>(x: A?, handler: ((A) -> Void)?) {
-    if Thread.isMainThread() {
+    if Thread.isMainThread {
         handler <*> x
     } else {
         DispatchQueue.main.async(execute: {
