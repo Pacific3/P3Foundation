@@ -22,7 +22,7 @@ extension Dictionary where Key: StringLiteralConvertible, Value: AnyObject {
     public func p3_double(key: Key) -> Double? {
         return self.p3_number(key: key).map { $0.doubleValue }
     }
- 
+    
     public func p3_string(key: Key) -> String? {
         return self[key] >>>= { $0 as? String }
     }
@@ -36,8 +36,9 @@ extension Dictionary where Key: StringLiteralConvertible, Value: StringLiteralCo
     public func p3_URLEncodedString() -> String {
         var pairs = [String]()
         for element in self {
-            if let key = encode(element.0 as! AnyObject),
-                let value = encode(element.1 as! AnyObject) where (!value.isEmpty && !key.isEmpty) {
+            if
+                let key = encode(element.0 as! AnyObject),
+                let value = encode(element.1 as! AnyObject), (!value.isEmpty && !key.isEmpty) {
                 pairs.append([key, value].joined(separator: "="))
             } else {
                 continue

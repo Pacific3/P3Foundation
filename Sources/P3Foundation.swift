@@ -50,7 +50,7 @@ public func p3_executeAfter(time: TimeInterval, handler: (Void) -> Void) {
 public func p3_executeOnFirstLaunch(handler: ((Void) -> Void)?) {
     let hasRunOnce = UserDefaults.p3_getBool(key: kP3ApplicationHasAlreadyRunOnce)
     
-    guard let handler = handler where !hasRunOnce else {
+    guard let handler = handler, !hasRunOnce else {
         return
     }
     

@@ -15,9 +15,10 @@ public func >>>= <A, B> (optional: A?, f: (A) -> B?) -> B? {
 infix operator <*> { associativity left precedence 150 }
 @discardableResult
 public func <*><A, B>(l: ((A) -> B)?, r: A?) -> B? {
-    if let
-        l1 = l,
-        r1 = r {
+    if
+        let l1 = l,
+        let r1 = r
+    {
         return l1(r1)
     }
     
