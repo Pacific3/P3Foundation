@@ -1,12 +1,12 @@
 //
-//  Lock.swift
+//  NSLock.swift
 //  P3Foundation
 //
 //  Created by Oscar Swanros on 6/15/16.
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-public extension Lock {
+public extension NSLock {
     public func withCriticalScope<T>( block: @noescape(Void) -> T) -> T {
         lock()
         let value = block()
@@ -15,7 +15,7 @@ public extension Lock {
     }
 }
 
-public extension RecursiveLock {
+public extension NSRecursiveLock {
     public func withCriticalScope<T>( block: @noescape(Void) -> T) -> T {
         lock()
         let value = block()

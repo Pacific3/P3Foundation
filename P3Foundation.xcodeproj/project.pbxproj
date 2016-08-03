@@ -28,7 +28,7 @@
 		DFCF5FD21D1207A900E822F9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */; };
 		DFCF5FD51D1207DD00E822F9 /* Clonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD41D1207DD00E822F9 /* Clonable.swift */; };
 		DFCF5FD71D12082700E822F9 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD61D12082700E822F9 /* Array.swift */; };
-		DFCF5FD91D120CD200E822F9 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD81D120CD200E822F9 /* Lock.swift */; };
+		DFCF5FD91D120CD200E822F9 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD81D120CD200E822F9 /* NSLock.swift */; };
 		DFCF5FDB1D120D4500E822F9 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FDA1D120D4500E822F9 /* URL.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		DFCF5FD41D1207DD00E822F9 /* Clonable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clonable.swift; sourceTree = "<group>"; };
 		DFCF5FD61D12082700E822F9 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		DFCF5FD81D120CD200E822F9 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
+		DFCF5FD81D120CD200E822F9 /* NSLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
 		DFCF5FDA1D120D4500E822F9 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +142,7 @@
 				DFCF5FD61D12082700E822F9 /* Array.swift */,
 				DFC8AA0E1D1395F4002324A5 /* Operation.swift */,
 				DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */,
-				DFCF5FD81D120CD200E822F9 /* Lock.swift */,
+				DFCF5FD81D120CD200E822F9 /* NSLock.swift */,
 				DFCF5FDA1D120D4500E822F9 /* URL.swift */,
 				DFC8AA071D139320002324A5 /* NSError.swift */,
 			);
@@ -251,7 +251,7 @@
 				DFC8AA021D139295002324A5 /* ErrorConvertible.swift in Sources */,
 				DFCF5FD51D1207DD00E822F9 /* Clonable.swift in Sources */,
 				DFC8AA0F1D1395F4002324A5 /* Operation.swift in Sources */,
-				DFCF5FD91D120CD200E822F9 /* Lock.swift in Sources */,
+				DFCF5FD91D120CD200E822F9 /* NSLock.swift in Sources */,
 				DFC8A9FD1D1390E9002324A5 /* P3OperationBlockObserver.swift in Sources */,
 				DFC8AA061D139300002324A5 /* P3ErrorSpecification.swift in Sources */,
 				DFC8AA0A1D139368002324A5 /* P3OperationError.swift in Sources */,

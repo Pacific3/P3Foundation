@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-extension Dictionary where Key: StringLiteralConvertible, Value: AnyObject {
+extension Dictionary where Key: ExpressibleByStringLiteral, Value: AnyObject {
     public func p3_number(key: Key) -> NSNumber? {
         return self[key] >>>= { $0 as? NSNumber }
     }
@@ -32,7 +32,7 @@ extension Dictionary where Key: StringLiteralConvertible, Value: AnyObject {
     }
 }
 
-extension Dictionary where Key: StringLiteralConvertible, Value: StringLiteralConvertible {
+extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleByStringLiteral {
     public func p3_URLEncodedString() -> String {
         var pairs = [String]()
         for element in self {

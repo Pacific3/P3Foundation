@@ -61,7 +61,7 @@ public class P3Operation: Operation {
         }
     }
     private var _state = State.Initialized
-    private let stateLock = Lock()
+    private let stateLock = NSLock()
     
     private var state: State {
         get {
@@ -87,7 +87,7 @@ public class P3Operation: Operation {
     }
     
     // MARK: - Operation "readiness"
-    private let readyLock = RecursiveLock()
+    private let readyLock = NSRecursiveLock()
     
     override public var isReady: Bool {
         var _ready = false

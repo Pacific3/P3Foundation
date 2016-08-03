@@ -55,7 +55,7 @@ struct OperationConditionEvaluator {
             }
         }
         
-        conditionGroup.notify(queue: DispatchQueue.global(attributes: .qosDefault)) {
+        conditionGroup.notify(queue: DispatchQueue.global(qos: .default)) {
             var failures = results.flatMap { $0?.error }
             
             if operation.isCancelled {
