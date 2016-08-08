@@ -10,13 +10,8 @@ private let userDefaults = UserDefaults.standard
 
 public extension UserDefaults {
     // MARK: - Get Values
-    public static func p3_getString(key: String) -> String {
-        let s = userDefaults.object(forKey: key) as? String
-        if let s = s {
-            return s
-        }
-        
-        return ""
+    public static func p3_getString(key: String) -> String? {
+        return userDefaults.object(forKey: key) as? String
     }
     
     public static func p3_getBool(key: String) -> Bool {
