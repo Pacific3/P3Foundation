@@ -60,9 +60,6 @@
  ```
  */
 public class P3OperationQueue: OperationQueue {
-    /// Singleton object for `OperationQueue`. **Use carefully**.
-    public static let sharedQueue = OperationQueue()
-    
     /// The `OperationQueue`'s instance delegate.
     /// - SeeAlso: `protocol OperationQueueDelegate`
     weak var delegate: P3OperationQueueDelegate?
@@ -76,9 +73,12 @@ public class P3OperationQueue: OperationQueue {
                 produceHandler: { [weak self] in
                     self?.addOperation($1)
                 },
-                finishHandler: {[weak self] in
+                finishHandler: {[weak self] finishedOperation, errors in
                     if let q = self {
-                        q.delegate?.operationQueue?(operationQueue: q, operationDidFinish: $0, withErrors: $1)
+                        q.delegate?.operationQueue?(operationQueue: q, operationDidFinish: finishedOperation, withErrors: errors)
+                        finishedOperation.dependencies.forEach {
+                            finishedOperation.removeDependency($0)
+                        }
                     }
                 }
             )
@@ -115,6 +115,7 @@ public class P3OperationQueue: OperationQueue {
             operation.add { [weak self, weak operation] in
                 guard let queue = self, let operation = operation else { return }
                 queue.delegate?.operationQueue?(operationQueue: queue, operationDidFinish: operation, withErrors: [])
+                operation.dependencies.forEach { operation.removeDependency($0) }
             }
         }
         
@@ -137,7 +138,4 @@ public class P3OperationQueue: OperationQueue {
             }
         }
     }
-    
-    public override init() { }
 }
-
