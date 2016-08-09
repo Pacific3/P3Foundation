@@ -24,6 +24,29 @@
 		DFC8AA0A1D139368002324A5 /* P3OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA091D139368002324A5 /* P3OperationError.swift */; };
 		DFC8AA0D1D1394BC002324A5 /* P3OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA0C1D1394BC002324A5 /* P3OperationQueue.swift */; };
 		DFC8AA0F1D1395F4002324A5 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA0E1D1395F4002324A5 /* Operation.swift */; };
+		DFC9B8831D5A3AEA00934E32 /* P3FoundationTV.h in Headers */ = {isa = PBXBuildFile; fileRef = DFC9B8811D5A3AEA00934E32 /* P3FoundationTV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFC9B8871D5A3AFC00934E32 /* P3Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF31D11EE77009B2DEE /* P3Foundation.swift */; };
+		DFC9B8881D5A3AFC00934E32 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF71D11F3DB009B2DEE /* Operators.swift */; };
+		DFC9B8891D5A3AFC00934E32 /* P3Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA031D1392A4002324A5 /* P3Error.swift */; };
+		DFC9B88A1D5A3AFC00934E32 /* P3ErrorSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA051D139300002324A5 /* P3ErrorSpecification.swift */; };
+		DFC9B88B1D5A3AFC00934E32 /* P3Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8A9F71D139012002324A5 /* P3Operation.swift */; };
+		DFC9B88C1D5A3AFC00934E32 /* P3OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA0C1D1394BC002324A5 /* P3OperationQueue.swift */; };
+		DFC9B88D1D5A3AFC00934E32 /* P3OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA091D139368002324A5 /* P3OperationError.swift */; };
+		DFC9B88E1D5A3AFC00934E32 /* P3GroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3243931D143F74004EC635 /* P3GroupOperation.swift */; };
+		DFC9B88F1D5A3AFC00934E32 /* P3OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8A9FF1D139132002324A5 /* P3OperationCondition.swift */; };
+		DFC9B8901D5A3AFC00934E32 /* P3OperationExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF32438F1D1396A6004EC635 /* P3OperationExclusivityController.swift */; };
+		DFC9B8911D5A3AFC00934E32 /* P3MutuallyExclusiveOperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3243911D143E96004EC635 /* P3MutuallyExclusiveOperationCondition.swift */; };
+		DFC9B8921D5A3AFC00934E32 /* P3OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8A9FA1D1390BF002324A5 /* P3OperationObserver.swift */; };
+		DFC9B8931D5A3AFC00934E32 /* P3OperationBlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8A9FC1D1390E9002324A5 /* P3OperationBlockObserver.swift */; };
+		DFC9B8941D5A3AFC00934E32 /* Clonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD41D1207DD00E822F9 /* Clonable.swift */; };
+		DFC9B8951D5A3AFC00934E32 /* ErrorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA011D139295002324A5 /* ErrorConvertible.swift */; };
+		DFC9B8961D5A3AFC00934E32 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FCF1D1207A900E822F9 /* Dictionary.swift */; };
+		DFC9B8971D5A3AFC00934E32 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD61D12082700E822F9 /* Array.swift */; };
+		DFC9B8981D5A3AFC00934E32 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA0E1D1395F4002324A5 /* Operation.swift */; };
+		DFC9B8991D5A3AFC00934E32 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */; };
+		DFC9B89A1D5A3AFC00934E32 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD81D120CD200E822F9 /* NSLock.swift */; };
+		DFC9B89B1D5A3AFC00934E32 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FDA1D120D4500E822F9 /* URL.swift */; };
+		DFC9B89C1D5A3AFC00934E32 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8AA071D139320002324A5 /* NSError.swift */; };
 		DFCF5FD11D1207A900E822F9 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FCF1D1207A900E822F9 /* Dictionary.swift */; };
 		DFCF5FD21D1207A900E822F9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */; };
 		DFCF5FD51D1207DD00E822F9 /* Clonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD41D1207DD00E822F9 /* Clonable.swift */; };
@@ -52,6 +75,9 @@
 		DFC8AA091D139368002324A5 /* P3OperationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3OperationError.swift; sourceTree = "<group>"; };
 		DFC8AA0C1D1394BC002324A5 /* P3OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3OperationQueue.swift; sourceTree = "<group>"; };
 		DFC8AA0E1D1395F4002324A5 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		DFC9B87F1D5A3AEA00934E32 /* P3FoundationTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = P3FoundationTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFC9B8811D5A3AEA00934E32 /* P3FoundationTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = P3FoundationTV.h; sourceTree = "<group>"; };
+		DFC9B8821D5A3AEA00934E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFCF5FCF1D1207A900E822F9 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		DFCF5FD41D1207DD00E822F9 /* Clonable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clonable.swift; sourceTree = "<group>"; };
@@ -68,6 +94,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFC9B87B1D5A3AEA00934E32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				DF765BEA1D11EE53009B2DEE /* Sources */,
+				DFC9B8801D5A3AEA00934E32 /* P3FoundationTV */,
 				DF765BE91D11EE53009B2DEE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				DF765BE81D11EE53009B2DEE /* P3Foundation.framework */,
+				DFC9B87F1D5A3AEA00934E32 /* P3FoundationTV.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +170,15 @@
 			path = Conditions;
 			sourceTree = "<group>";
 		};
+		DFC9B8801D5A3AEA00934E32 /* P3FoundationTV */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9B8811D5A3AEA00934E32 /* P3FoundationTV.h */,
+				DFC9B8821D5A3AEA00934E32 /* Info.plist */,
+			);
+			path = P3FoundationTV;
+			sourceTree = "<group>";
+		};
 		DFCF5FCE1D12077C00E822F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +213,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFC9B87C1D5A3AEA00934E32 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFC9B8831D5A3AEA00934E32 /* P3FoundationTV.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -190,6 +242,24 @@
 			productReference = DF765BE81D11EE53009B2DEE /* P3Foundation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DFC9B87E1D5A3AEA00934E32 /* P3FoundationTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFC9B8861D5A3AEA00934E32 /* Build configuration list for PBXNativeTarget "P3FoundationTV" */;
+			buildPhases = (
+				DFC9B87A1D5A3AEA00934E32 /* Sources */,
+				DFC9B87B1D5A3AEA00934E32 /* Frameworks */,
+				DFC9B87C1D5A3AEA00934E32 /* Headers */,
+				DFC9B87D1D5A3AEA00934E32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = P3FoundationTV;
+			productName = P3FoundationTV;
+			productReference = DFC9B87F1D5A3AEA00934E32 /* P3FoundationTV.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +274,11 @@
 						DevelopmentTeam = 3BVQ3MVDQR;
 						DevelopmentTeamName = "OSCAR  CISNEROS LARIOS";
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					DFC9B87E1D5A3AEA00934E32 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3BVQ3MVDQR;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -221,12 +296,20 @@
 			projectRoot = "";
 			targets = (
 				DF765BE71D11EE53009B2DEE /* P3Foundation */,
+				DFC9B87E1D5A3AEA00934E32 /* P3FoundationTV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DF765BE61D11EE53009B2DEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC9B87D1D5A3AEA00934E32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -262,6 +345,35 @@
 				DF765BF81D11F3DB009B2DEE /* Operators.swift in Sources */,
 				DFCF5FDB1D120D4500E822F9 /* URL.swift in Sources */,
 				DFC8A9F81D139012002324A5 /* P3Operation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC9B87A1D5A3AEA00934E32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFC9B8871D5A3AFC00934E32 /* P3Foundation.swift in Sources */,
+				DFC9B8881D5A3AFC00934E32 /* Operators.swift in Sources */,
+				DFC9B8891D5A3AFC00934E32 /* P3Error.swift in Sources */,
+				DFC9B88A1D5A3AFC00934E32 /* P3ErrorSpecification.swift in Sources */,
+				DFC9B88B1D5A3AFC00934E32 /* P3Operation.swift in Sources */,
+				DFC9B88C1D5A3AFC00934E32 /* P3OperationQueue.swift in Sources */,
+				DFC9B88D1D5A3AFC00934E32 /* P3OperationError.swift in Sources */,
+				DFC9B88E1D5A3AFC00934E32 /* P3GroupOperation.swift in Sources */,
+				DFC9B88F1D5A3AFC00934E32 /* P3OperationCondition.swift in Sources */,
+				DFC9B8901D5A3AFC00934E32 /* P3OperationExclusivityController.swift in Sources */,
+				DFC9B8911D5A3AFC00934E32 /* P3MutuallyExclusiveOperationCondition.swift in Sources */,
+				DFC9B8921D5A3AFC00934E32 /* P3OperationObserver.swift in Sources */,
+				DFC9B8931D5A3AFC00934E32 /* P3OperationBlockObserver.swift in Sources */,
+				DFC9B8941D5A3AFC00934E32 /* Clonable.swift in Sources */,
+				DFC9B8951D5A3AFC00934E32 /* ErrorConvertible.swift in Sources */,
+				DFC9B8961D5A3AFC00934E32 /* Dictionary.swift in Sources */,
+				DFC9B8971D5A3AFC00934E32 /* Array.swift in Sources */,
+				DFC9B8981D5A3AFC00934E32 /* Operation.swift in Sources */,
+				DFC9B8991D5A3AFC00934E32 /* UserDefaults.swift in Sources */,
+				DFC9B89A1D5A3AFC00934E32 /* NSLock.swift in Sources */,
+				DFC9B89B1D5A3AFC00934E32 /* URL.swift in Sources */,
+				DFC9B89C1D5A3AFC00934E32 /* NSError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +516,54 @@
 			};
 			name = Release;
 		};
+		DFC9B8841D5A3AEA00934E32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3BVQ3MVDQR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = P3FoundationTV/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Pacific3.P3FoundationTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		DFC9B8851D5A3AEA00934E32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3BVQ3MVDQR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = P3FoundationTV/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Pacific3.P3FoundationTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -424,6 +584,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		DFC9B8861D5A3AEA00934E32 /* Build configuration list for PBXNativeTarget "P3FoundationTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFC9B8841D5A3AEA00934E32 /* Debug */,
+				DFC9B8851D5A3AEA00934E32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
