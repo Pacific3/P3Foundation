@@ -21,7 +21,7 @@ public struct P3MutuallyExclusiveOperationCondition<T>: P3OperationCondition {
         return nil
     }
     
-    public func evaluateForOperation(operation: Operation, completion: (P3OperationCompletionResult) -> Void) {
+    public func evaluateForOperation(operation: Operation, completion: @escaping (P3OperationCompletionResult) -> Void) {
         completion(.Satisfied)
     }
 }

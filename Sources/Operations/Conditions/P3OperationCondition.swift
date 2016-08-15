@@ -14,7 +14,7 @@ public protocol P3OperationCondition {
     static var isMutuallyExclusive: Bool { get }
     
     func dependencyForOperation(operation: P3Operation) -> Operation?
-    func evaluateForOperation(operation: Operation, completion: (P3OperationCompletionResult) -> Void)
+    func evaluateForOperation(operation: Operation, completion: @escaping (P3OperationCompletionResult) -> Void)
 }
 
 public enum P3OperationCompletionResult: Equatable {
