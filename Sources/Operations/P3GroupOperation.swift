@@ -11,12 +11,12 @@
  `GroupOperation` is a subclass of `Operation` that represents a group of
  `Operations` that together repesent a whole operation.
  */
-public class P3GroupOperation: P3Operation {
+open class P3GroupOperation: P3Operation {
     public let internalQueue = P3OperationQueue()
-    private let startingOperation = BlockOperation(block: {})
-    private let finishingOperation = BlockOperation(block: {})
+    fileprivate let startingOperation = BlockOperation(block: {})
+    fileprivate let finishingOperation = BlockOperation(block: {})
     
-    private var aggregatedErrors = [NSError]()
+    fileprivate var aggregatedErrors = [NSError]()
     
     convenience public init(operations: Operation...) {
         self.init(operations: operations)
@@ -46,12 +46,12 @@ public class P3GroupOperation: P3Operation {
     }
     
     /// Cancels all the operations on the internal queue.
-    override public func cancel() {
+    override open func cancel() {
         internalQueue.cancelAllOperations()
         super.cancel()
     }
     
-    override public func execute() {
+    override open func execute() {
         internalQueue.isSuspended = false
         internalQueue.addOperation(finishingOperation)
     }

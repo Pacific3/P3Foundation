@@ -37,8 +37,8 @@ extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleBy
         var pairs = [String]()
         for element in self {
             if
-                let key = encode(element.0 as! AnyObject),
-                let value = encode(element.1 as! AnyObject), (!value.isEmpty && !key.isEmpty) {
+                let key = encode(element.0 as AnyObject),
+                let value = encode(element.1 as AnyObject), (!value.isEmpty && !key.isEmpty) {
                 pairs.append([key, value].joined(separator: "="))
             } else {
                 continue

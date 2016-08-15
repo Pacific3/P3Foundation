@@ -6,27 +6,27 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-public class P3Operation: Operation {
+open class P3Operation: Operation {
     //MARK: - KVO
-    class func keyPathsForValuesAffectingIsReady() -> Set<NSObject> {
+    class func keyPathsForValuesAffectingIsReady() -> Set<NSString> {
         return ["state", "cancelledState"]
     }
     
-    class func keyPathsForValuesAffectingIsExecuting() -> Set<NSObject> {
+    class func keyPathsForValuesAffectingIsExecuting() -> Set<NSString> {
         return ["state"]
     }
     
-    class func keyPathsForValuesAffectingIsFinished() -> Set<NSObject> {
+    class func keyPathsForValuesAffectingIsFinished() -> Set<NSString> {
         return ["state"]
     }
     
-    class func keyPathsForValuesAffectingIsCancelled() -> Set<NSObject> {
+    class func keyPathsForValuesAffectingIsCancelled() -> Set<NSString> {
         return ["cancelledState"]
     }
     
     // MARK: - State management
     
-    private enum State: Int, Comparable {
+    fileprivate enum State: Int, Comparable {
         case Initialized
         case Pending
         case EvaluatingConditions
@@ -89,7 +89,7 @@ public class P3Operation: Operation {
     // MARK: - Operation "readiness"
     private let readyLock = NSRecursiveLock()
     
-    override public var isReady: Bool {
+    override open var isReady: Bool {
         var _ready = false
         
         readyLock.withCriticalScope {
@@ -139,7 +139,7 @@ public class P3Operation: Operation {
         }
     }
     
-    override public var isCancelled: Bool {
+    override open var isCancelled: Bool {
         return _cancelled
     }
     
@@ -155,11 +155,11 @@ public class P3Operation: Operation {
         }
     }
     
-    override public var isExecuting: Bool {
+    override open var isExecuting: Bool {
         return state == .Executing
     }
     
-    override public var isFinished: Bool {
+    override open var isFinished: Bool {
         return state == .Finished
     }
     
@@ -193,7 +193,7 @@ public class P3Operation: Operation {
         conditions.append(condition)
     }
     
-    override public func addDependency(_ operation: Operation) {
+    override open func addDependency(_ operation: Operation) {
         assert(state < .Executing, "Dependencies cannot be modified after execution has begun.")
         
         super.addDependency(operation)
@@ -245,8 +245,8 @@ public class P3Operation: Operation {
         }
     }
     
-    public func execute() {
-        print("\(self.dynamicType) must override `execute()`.")
+    open func execute() {
+        print("\(type(of: self)) must override `execute()`.")
         finish()
     }
     
@@ -256,7 +256,7 @@ public class P3Operation: Operation {
         }
     }
     
-    override public func cancel() {
+    override open func cancel() {
         if isFinished {
             return
         }

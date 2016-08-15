@@ -94,9 +94,9 @@ public class P3OperationQueue: OperationQueue {
             }
             
             let concurrencyCategories: [String] = op.conditions.flatMap { condition in
-                if !condition.dynamicType.isMutuallyExclusive { return nil }
+                if !type(of: condition).isMutuallyExclusive { return nil }
                 
-                return "\(condition.dynamicType)"
+                return "\(type(of: condition))"
             }
             
             if !concurrencyCategories.isEmpty {

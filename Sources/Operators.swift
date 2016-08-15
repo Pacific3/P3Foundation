@@ -6,13 +6,17 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-infix operator >>>= {}
+infix operator >>>=
 @discardableResult
 public func >>>= <A, B> (optional: A?, f: (A) -> B?) -> B? {
     return flatten(x: optional.map(f))
 }
 
-infix operator <*> { associativity left precedence 150 }
+precedencegroup Applicable {
+    associativity: left
+}
+
+infix operator <*> : Applicable
 @discardableResult
 public func <*><A, B>(l: ((A) -> B)?, r: A?) -> B? {
     if

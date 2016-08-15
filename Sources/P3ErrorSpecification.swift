@@ -23,7 +23,7 @@ public struct P3ErrorSpecification<CodeType, DescriptionType, DomainType>: Error
         return _domain
     }
     
-    public init<E: ErrorConvertible where E.Code == CodeType, E.Description == DescriptionType, E.Domain == DomainType>(ec: E) {
+    public init<E: ErrorConvertible>(ec: E) where E.Code == CodeType, E.Description == DescriptionType, E.Domain == DomainType {
         _code = ec.code
         _desc = ec.errorDescription
         _domain = ec.domain

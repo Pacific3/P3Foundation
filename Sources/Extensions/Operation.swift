@@ -7,7 +7,7 @@
 //
 
 extension Operation {
-    public func add(completion: (Void) -> Void) {
+    public func add(completion: @escaping (Void) -> Void) {
         if let existing = completionBlock {
             completionBlock = {
                 existing()

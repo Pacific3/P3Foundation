@@ -42,7 +42,7 @@ public func ==(lhs: P3OperationCompletionResult, rhs: P3OperationCompletionResul
 }
 
 struct OperationConditionEvaluator {
-    static func evaluate(conditions: [P3OperationCondition], operation: Operation, completion: ([NSError]) -> Void) {
+    static func evaluate(conditions: [P3OperationCondition], operation: Operation, completion: @escaping ([NSError]) -> Void) {
         let conditionGroup = DispatchGroup()
         
         var results: [P3OperationCompletionResult?] = []

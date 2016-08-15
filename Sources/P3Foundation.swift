@@ -43,8 +43,8 @@ public func p3_executeOnMainThread<A>(x: A?, handler: ((A) -> Void)?) {
     }
 }
 
-public func p3_executeAfter(time: TimeInterval, handler: (Void) -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: handler)
+public func p3_executeAfter(time: TimeInterval, handler: @escaping (Void) -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time, execute: handler)
 }
 
 public func p3_executeOnFirstLaunch(handler: ((Void) -> Void)?) {
