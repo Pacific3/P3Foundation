@@ -307,6 +307,9 @@ open class P3Operation: Operation {
     override final public func waitUntilFinished() {
         fatalError("Nope!")
     }
+    
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    }
 }
 
 // MARK: - Operators
