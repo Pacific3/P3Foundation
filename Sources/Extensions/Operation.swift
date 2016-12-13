@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-extension Operation {
+public extension Operation {
     public func add(completion: @escaping (Void) -> Void) {
         if let existing = completionBlock {
             completionBlock = {

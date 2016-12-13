@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
-extension Array where Element: Equatable {
+public extension Array where Element: Equatable {
     public mutating func remove(item: Element) {
         var index: Int?
         for (idx, it) in self.enumerated() {
