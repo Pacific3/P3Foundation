@@ -13,17 +13,21 @@ public let kP3ErrorDomain = "net.Pacific3.ErrorDomainSpecification"
 
 
 // MARK: - Public Functions
-public func p3_documentsDirectory() -> String? {
-    return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+public func p3_documentsDirectory() -> NSString? {
+    return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first as NSString?
 }
 
-public func p3_executeOnMainThread(handler: ((Void) -> Void)?) {
-    if let block = handler {
-        if Thread.isMainThread {
-            block()
-        } else {
-            DispatchQueue.main.sync(execute: block)
-        }
+public func p3_executeOnMainThread(handler: (Void) -> Void) {
+    if Thread.isMainThread {
+        handler()
+    } else {
+        DispatchQueue.main.sync(execute: handler)
+    }
+}
+
+public func p3_executeOnBackgroundThread(handler: @escaping (Void) -> Void) {
+    DispatchQueue.global(qos: .background).async {
+        handler()
     }
 }
 
