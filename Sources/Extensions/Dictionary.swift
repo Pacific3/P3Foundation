@@ -32,6 +32,19 @@ public extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
     }
 }
 
+public extension Dictionary {
+    static func p3_fromURL(query: String) -> [String:String] {
+        var dict: [String:String] = [:]
+        let pairs = query.components(separatedBy: "&")
+        for pair in pairs {
+            let sub = pair.components(separatedBy: "=")
+            dict[sub[0]] = sub[1]
+        }
+        
+        return dict
+    }
+}
+
 extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleByStringLiteral {
     public func p3_URLEncodedString() -> String {
         var pairs = [String]()
