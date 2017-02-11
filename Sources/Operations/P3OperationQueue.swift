@@ -128,7 +128,7 @@ public class P3OperationQueue: OperationQueue {
     }
     
     override public func addOperations(_ ops: [Operation], waitUntilFinished wait: Bool) {
-        for operation in operations {
+        for operation in ops {
             addOperation(operation)
         }
         
