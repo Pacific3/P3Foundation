@@ -64,7 +64,7 @@ open class P3GroupOperation: P3Operation {
         aggregatedErrors.append(error)
     }
     
-    public func operationDidFinish(operation: Operation, withErrors errors: [NSError]) {
+    open func operationDidFinish(operation: Operation, withErrors errors: [NSError]) {
         // Subclassing!
     }
     
