@@ -63,6 +63,39 @@ public func p3_executeOnFirstLaunch(handler: ((Void) -> Void)?) {
 }
 
 
+// MARK: - Clean values
+
+func p3_unwrapped<V, K>(dictionary: [V:K]?) -> [V:K] {
+    guard let d = dictionary else { return [:] }
+    
+    return d
+}
+
+func p3_unwrapped(string: String?) -> String {
+    guard let s = string else { return "" }
+    
+    return s
+}
+
+func p3_unwrapped(int: Int?) -> Int {
+    guard let i = int else { return 0 }
+    
+    return i
+}
+
+func p3_unwrapped(float: Float?) -> Float {
+    guard let f = float else { return 0.0 }
+
+    return f
+}
+
+func p3_unwrapped<T>(value: T?, default: T) -> T {
+    guard let t = value else { return `default` }
+    
+    return t
+}
+
+
 // MARK: - Internal
 func encode(_ o: Any) -> String? {
     guard let string = o as? NSString else {
