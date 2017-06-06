@@ -42,7 +42,7 @@ public func p3_executeOnMainThread<A>(x: A?, handler: ((A) -> Void)?) {
     } else {
         DispatchQueue.main.async(execute: {
             handler <*> x
-            }
+        }
         )
     }
 }
@@ -85,7 +85,7 @@ func p3_unwrapped(int: Int?) -> Int {
 
 func p3_unwrapped(float: Float?) -> Float {
     guard let f = float else { return 0.0 }
-
+    
     return f
 }
 
@@ -97,7 +97,7 @@ func p3_unwrapped<T>(value: T?, default: T) -> T {
 
 
 // MARK: - Internal
-func encode(_ o: Any) -> String? {
+func encodeAsString(_ o: Any) -> String? {
     guard let string = o as? NSString else {
         return nil
     }
