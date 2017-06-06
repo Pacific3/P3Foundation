@@ -17,7 +17,7 @@ public func p3_documentsDirectory() -> NSString? {
     return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first as NSString?
 }
 
-public func p3_executeOnMainThread(handler: (Void) -> Void) {
+public func p3_executeOnMainThread(handler: () -> Void) {
     if Thread.isMainThread {
         handler()
     } else {
@@ -25,7 +25,7 @@ public func p3_executeOnMainThread(handler: (Void) -> Void) {
     }
 }
 
-public func p3_executeOnBackgroundThread(handler: @escaping (Void) -> Void) {
+public func p3_executeOnBackgroundThread(handler: @escaping () -> Void) {
     DispatchQueue.global(qos: .background).async {
         handler()
     }
@@ -47,11 +47,11 @@ public func p3_executeOnMainThread<A>(x: A?, handler: ((A) -> Void)?) {
     }
 }
 
-public func p3_executeAfter(time: TimeInterval, handler: @escaping (Void) -> Void) {
+public func p3_executeAfter(time: TimeInterval, handler: @escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time, execute: handler)
 }
 
-public func p3_executeOnFirstLaunch(handler: ((Void) -> Void)?) {
+public func p3_executeOnFirstLaunch(handler: (() -> Void)?) {
     let hasRunOnce = UserDefaults.p3_getBool(key: kP3ApplicationHasAlreadyRunOnce)
     
     guard let handler = handler, !hasRunOnce else {
