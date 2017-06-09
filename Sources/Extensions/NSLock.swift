@@ -7,7 +7,7 @@
 //
 
 public extension NSLock {
-    public func withCriticalScope<T>( block: (Void) -> T) -> T {
+    public func withCriticalScope<T>( block: () -> T) -> T {
         lock()
         let value = block()
         unlock()
@@ -16,7 +16,7 @@ public extension NSLock {
 }
 
 public extension NSRecursiveLock {
-    public func withCriticalScope<T>( block: (Void) -> T) -> T {
+    public func withCriticalScope<T>( block: () -> T) -> T {
         lock()
         let value = block()
         unlock()
