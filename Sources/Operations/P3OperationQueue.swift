@@ -120,6 +120,7 @@ public class P3OperationQueue: OperationQueue {
         }
         
         delegate?.operationQueue?(operationQueue: self, willAddOperation: operation)
+        
         super.addOperation(operation)
         
         if let op = operation as? P3Operation {

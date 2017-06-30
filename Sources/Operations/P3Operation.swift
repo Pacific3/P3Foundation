@@ -8,59 +8,60 @@
 
 open class P3Operation: Operation {
     //MARK: - KVO
-    class func keyPathsForValuesAffectingIsReady() -> Set<NSString> {
+    
+    @objc class func keyPathsForValuesAffectingIsReady() -> Set<String> {
         return ["state", "cancelledState"]
     }
     
-    class func keyPathsForValuesAffectingIsExecuting() -> Set<NSString> {
+    @objc class func keyPathsForValuesAffectingIsExecuting() -> Set<String> {
         return ["state"]
     }
     
-    class func keyPathsForValuesAffectingIsFinished() -> Set<NSString> {
+    @objc class func keyPathsForValuesAffectingIsFinished() -> Set<String> {
         return ["state"]
     }
     
-    class func keyPathsForValuesAffectingIsCancelled() -> Set<NSString> {
+    @objc class func keyPathsForValuesAffectingIsCancelled() -> Set<String> {
         return ["cancelledState"]
     }
     
     // MARK: - State management
     
     fileprivate enum State: Int, Comparable {
-        case Initialized
-        case Pending
-        case EvaluatingConditions
-        case Ready
-        case Executing
-        case Finishing
-        case Finished
+        case initialized
+        case pending
+        case evaluatingConditions
+        case ready
+        case executing
+        case finishing
+        case finished
         
         func canTransitionToState(target: State, operationIsCancelled cancelled: Bool) -> Bool {
             switch (self, target) {
-            case (.Initialized, .Pending):
+            case (.initialized, .pending):
                 return true
-            case (.Pending, .EvaluatingConditions):
+            case (.pending, .evaluatingConditions):
                 return true
-            case (.Pending, .Finishing) where cancelled:
+            case (.pending, .finishing) where cancelled:
                 return true
-            case (.Pending, .Ready) where cancelled:
+            case (.pending, .ready) where cancelled:
                 return true
-            case (.EvaluatingConditions, .Ready):
+            case (.evaluatingConditions, .ready):
                 return true
-            case (.Ready, .Executing):
+            case (.ready, .executing):
                 return true
-            case (.Ready, .Finishing):
+            case (.ready, .finishing):
                 return true
-            case (.Executing, .Finishing):
+            case (.executing, .finishing):
                 return true
-            case (.Finishing, .Finished):
+            case (.finishing, .finished):
                 return true
             default:
                 return false
             }
         }
     }
-    private var _state = State.Initialized
+    private var _state = State.initialized
     private let stateLock = NSLock()
     
     private var state: State {
@@ -74,7 +75,7 @@ open class P3Operation: Operation {
             willChangeValue(forKey: "state")
             
             stateLock.withCriticalScope {
-                guard _state != .Finished else {
+                guard _state != .finished else {
                     return
                 }
                 
@@ -95,12 +96,12 @@ open class P3Operation: Operation {
         readyLock.withCriticalScope {
             switch state {
                 
-            case .Initialized:
+            case .initialized:
                 _ready = isCancelled
                 
-            case .Pending:
+            case .pending:
                 guard !isCancelled else {
-                    state = .Ready
+                    state = .ready
                     _ready = true
                     return
                 }
@@ -111,7 +112,7 @@ open class P3Operation: Operation {
                 
                 _ready = false
                 
-            case .Ready:
+            case .ready:
                 _ready = super.isReady || isCancelled
                 
             default:
@@ -149,18 +150,18 @@ open class P3Operation: Operation {
         }
         
         set {
-            assert(state < .Executing, "Can't modify the state after user execution has begun.")
+            assert(state < .executing, "Can't modify the state after user execution has begun.")
             
             qualityOfService = newValue ? .userInitiated : .default
         }
     }
     
     override open var isExecuting: Bool {
-        return state == .Executing
+        return state == .executing
     }
     
     override open var isFinished: Bool {
-        return state == .Finished
+        return state == .finished
     }
     
     
@@ -174,38 +175,38 @@ open class P3Operation: Operation {
     }
     
     func didEnqueue() {
-        state = .Pending
+        state = .pending
     }
     
     
     // MARK: - Observers, conditions, dependencies
     private(set) var observers = [P3OperationObserver]()
     public func addObserver(observer: P3OperationObserver) {
-        assert(state < .Executing, "Can't modify observes after execution has begun.")
+        assert(state < .executing, "Can't modify observes after execution has begun.")
         
         observers.append(observer)
     }
     
     private(set) var conditions = [P3OperationCondition]()
     public func addCondition(condition: P3OperationCondition) {
-        assert(state < .EvaluatingConditions, "Can't add conditions once execution has begun.")
+        assert(state < .evaluatingConditions, "Can't add conditions once execution has begun.")
         
         conditions.append(condition)
     }
     
     override open func addDependency(_ operation: Operation) {
-        assert(state < .Executing, "Dependencies cannot be modified after execution has begun.")
+        assert(state < .executing, "Dependencies cannot be modified after execution has begun.")
         
         super.addDependency(operation)
     }
     
     func evaluateConditions() {
-        assert(state == .Pending && !isCancelled, "evaluating conditions out of order!")
+        assert(state == .pending && !isCancelled, "evaluating conditions out of order!")
         
-        state = .EvaluatingConditions
+        state = .evaluatingConditions
         
         guard conditions.count > 0 else {
-            state = .Ready
+            state = .ready
             return
         }
         
@@ -215,7 +216,7 @@ open class P3Operation: Operation {
             }
             
             
-            self.state = .Ready
+            self.state = .ready
         }
     }
     
@@ -230,10 +231,10 @@ open class P3Operation: Operation {
     }
     
     override final public func main() {
-        assert(state == .Ready, "This operation must be performed by an operation queue.")
+        assert(state == .ready, "This operation must be performed by an operation queue.")
         
         if _internalErrors.isEmpty && !isCancelled {
-            state = .Executing
+            state = .executing
             
             for observer in observers {
                 observer.operationDidStart(operation: self)
@@ -246,8 +247,7 @@ open class P3Operation: Operation {
     }
     
     open func execute() {
-        print("\(type(of: self)) must override `execute()`.")
-        finish()
+        fatalError("\(type(of: self)) must override `execute()`.")
     }
     
     public final func produceOperation(operation: Operation) {
@@ -263,7 +263,7 @@ open class P3Operation: Operation {
         
         _cancelled = true
         
-        if state > .Ready {
+        if state > .ready {
             finish()
         }
     }
@@ -287,7 +287,7 @@ open class P3Operation: Operation {
     public func finish(errors: [NSError] = []) {
         if !hasFinished {
             hasFinished = true
-            state = .Finishing
+            state = .finishing
             
             let combinedErrors = _internalErrors + errors
             finished(errors: combinedErrors)
@@ -296,7 +296,7 @@ open class P3Operation: Operation {
                 observer.operationDidFinish(operation: self, errors: combinedErrors)
             }
             
-            state = .Finished
+            state = .finished
         }
     }
     
