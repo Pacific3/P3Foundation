@@ -13,6 +13,7 @@
 		DF765BEC1D11EE53009B2DEE /* P3Foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = DF765BEB1D11EE53009B2DEE /* P3Foundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF765BF41D11EE77009B2DEE /* P3Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF31D11EE77009B2DEE /* P3Foundation.swift */; };
 		DF765BF81D11F3DB009B2DEE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF71D11F3DB009B2DEE /* Operators.swift */; };
+		DF9353FB1F05FCD900DE8A95 /* P3OperationFinishObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9353FA1F05FCD900DE8A95 /* P3OperationFinishObserver.swift */; };
 		DFC8A9F81D139012002324A5 /* P3Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8A9F71D139012002324A5 /* P3Operation.swift */; };
 		DFC8A9FB1D1390BF002324A5 /* P3OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8A9FA1D1390BF002324A5 /* P3OperationObserver.swift */; };
 		DFC8A9FD1D1390E9002324A5 /* P3OperationBlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC8A9FC1D1390E9002324A5 /* P3OperationBlockObserver.swift */; };
@@ -41,6 +42,7 @@
 		DF765BED1D11EE53009B2DEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF765BF31D11EE77009B2DEE /* P3Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3Foundation.swift; sourceTree = "<group>"; };
 		DF765BF71D11F3DB009B2DEE /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		DF9353FA1F05FCD900DE8A95 /* P3OperationFinishObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P3OperationFinishObserver.swift; sourceTree = "<group>"; };
 		DFC8A9F71D139012002324A5 /* P3Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3Operation.swift; sourceTree = "<group>"; };
 		DFC8A9FA1D1390BF002324A5 /* P3OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3OperationObserver.swift; sourceTree = "<group>"; };
 		DFC8A9FC1D1390E9002324A5 /* P3OperationBlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3OperationBlockObserver.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				DFC8A9FA1D1390BF002324A5 /* P3OperationObserver.swift */,
+				DF9353FA1F05FCD900DE8A95 /* P3OperationFinishObserver.swift */,
 				DFC8A9FC1D1390E9002324A5 /* P3OperationBlockObserver.swift */,
 			);
 			path = Observers;
@@ -260,6 +263,7 @@
 				DFC8AA041D1392A4002324A5 /* P3Error.swift in Sources */,
 				DF3243921D143E96004EC635 /* P3MutuallyExclusiveOperationCondition.swift in Sources */,
 				DFC8AA021D139295002324A5 /* ErrorConvertible.swift in Sources */,
+				DF9353FB1F05FCD900DE8A95 /* P3OperationFinishObserver.swift in Sources */,
 				DFCF5FD51D1207DD00E822F9 /* Clonable.swift in Sources */,
 				DFC8AA0F1D1395F4002324A5 /* Operation.swift in Sources */,
 				DFCF5FD91D120CD200E822F9 /* NSLock.swift in Sources */,

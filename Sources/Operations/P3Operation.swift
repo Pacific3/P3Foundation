@@ -8,7 +8,6 @@
 
 open class P3Operation: Operation {
     //MARK: - KVO
-    
     @objc class func keyPathsForValuesAffectingIsReady() -> Set<String> {
         return ["state", "cancelledState"]
     }
@@ -182,6 +181,12 @@ open class P3Operation: Operation {
     // MARK: - Observers, conditions, dependencies
     private(set) var observers = [P3OperationObserver]()
     public func addObserver(observer: P3OperationObserver) {
+        assert(state < .executing, "Can't modify observes after execution has begun.")
+        
+        observers.append(observer)
+    }
+    
+    public func addFinishObserver<T>(observer: P3OperationFinishObserver<T>) {
         assert(state < .executing, "Can't modify observes after execution has begun.")
         
         observers.append(observer)
