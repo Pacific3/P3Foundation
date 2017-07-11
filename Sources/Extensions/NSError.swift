@@ -15,7 +15,7 @@ public extension NSError {
         )
     }
     
-    public convenience init(error: P3ErrorSpecification<Int, String, String>, userInfo: [NSString:AnyObject]) {
+    public convenience init(error: P3ErrorSpecification<Int, String, String>, userInfo: [String:Any]) {
         self.init(
             domain: error.domain,
             code: error.code,
