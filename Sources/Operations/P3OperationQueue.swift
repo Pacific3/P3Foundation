@@ -84,7 +84,7 @@ public class P3OperationQueue: OperationQueue {
             )
             op.addObserver(observer: delegate)
             
-            let dependencies = op.conditions.flatMap {
+            let dependencies = op.conditions.compactMap {
                 $0.dependencyForOperation(operation: op)
             }
             
@@ -93,7 +93,7 @@ public class P3OperationQueue: OperationQueue {
                 addOperation(dependency)
             }
             
-            let concurrencyCategories: [String] = op.conditions.flatMap { condition in
+            let concurrencyCategories: [String] = op.conditions.compactMap { condition in
                 if !type(of: condition).isMutuallyExclusive { return nil }
                 
                 return "\(type(of: condition))"

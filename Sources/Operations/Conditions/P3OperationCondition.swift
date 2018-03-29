@@ -56,7 +56,7 @@ struct OperationConditionEvaluator {
         }
         
         conditionGroup.notify(queue: DispatchQueue.global(qos: .default)) {
-            var failures = results.flatMap { $0?.error }
+            var failures = results.compactMap { $0?.error }
             
             if operation.isCancelled {
                 failures.append(NSError(error: P3ErrorSpecification(ec: P3OperationError.ConditionFailed)))
