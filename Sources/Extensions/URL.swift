@@ -7,7 +7,7 @@
 //
 
 public extension URL {
-    public func p3_append(params: [String:String])-> URL? {
+    func p3_append(params: [String:String])-> URL? {
         return URL(string: "\(self.absoluteString)?\(params.p3_URLEncodedString())")
     }
 }

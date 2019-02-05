@@ -10,34 +10,34 @@ private let userDefaults = UserDefaults.standard
 
 public extension UserDefaults {
     // MARK: - Get Values
-    public static func p3_getString(key: String) -> String? {
+    static func p3_getString(key: String) -> String? {
         return userDefaults.object(forKey: key) as? String
     }
     
-    public static func p3_getBool(key: String) -> Bool {
+    static func p3_getBool(key: String) -> Bool {
         return userDefaults.bool(forKey: key)
     }
     
-    public static func p3_getInt(key: String) -> Int {
+    static func p3_getInt(key: String) -> Int {
         return userDefaults.integer(forKey: key)
     }
     
     
     // MARK: - Set Values
     @discardableResult
-    public static func p3_setString(key: String, value: String) -> Bool {
+    static func p3_setString(key: String, value: String) -> Bool {
         userDefaults.set(value, forKey: key)
         return userDefaults.synchronize()
     }
     
     @discardableResult
-    public static func p3_setBool(key: String, value: Bool) -> Bool {
+    static func p3_setBool(key: String, value: Bool) -> Bool {
         userDefaults.set(value, forKey: key)
         return userDefaults.synchronize()
     }
     
     @discardableResult
-    public static func p3_setInt(key: String, value: Int) -> Bool {
+    static func p3_setInt(key: String, value: Int) -> Bool {
         userDefaults.set(value, forKey: key)
         return userDefaults.synchronize()
     }

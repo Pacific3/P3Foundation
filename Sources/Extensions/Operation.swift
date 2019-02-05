@@ -7,7 +7,7 @@
 //
 
 public extension Operation {
-    public func add(completion: @escaping () -> Void) {
+    func add(completion: @escaping () -> Void) {
         if let existing = completionBlock {
             completionBlock = {
                 existing()
@@ -18,7 +18,7 @@ public extension Operation {
         }
     }
     
-    public func add(dependencies: [Operation]) {
+    func add(dependencies: [Operation]) {
         for dependency in dependencies {
             addDependency(dependency)
         }

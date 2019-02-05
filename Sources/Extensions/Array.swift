@@ -7,7 +7,7 @@
 //
 
 public extension Array where Element: Equatable {
-    public mutating func remove(item: Element) {
+    mutating func remove(item: Element) {
         var index: Int?
         for (idx, it) in self.enumerated() {
             if item == it {

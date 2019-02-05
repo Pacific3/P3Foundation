@@ -7,7 +7,7 @@
 //
 
 public extension NSError {
-    public convenience init(error: P3ErrorSpecification<Int, String, String>) {
+    convenience init(error: P3ErrorSpecification<Int, String, String>) {
         self.init(
             domain: error.domain,
             code: error.code,
@@ -15,7 +15,7 @@ public extension NSError {
         )
     }
     
-    public convenience init(error: P3ErrorSpecification<Int, String, String>, userInfo: [String:Any]) {
+    convenience init(error: P3ErrorSpecification<Int, String, String>, userInfo: [String:Any]) {
         self.init(
             domain: error.domain,
             code: error.code,
